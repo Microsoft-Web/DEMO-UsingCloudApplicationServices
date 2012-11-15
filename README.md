@@ -110,7 +110,8 @@ Tweets getTweets(string name)
 1. Remove 
 ````C#
 using Microsoft.WindowsAzure.StorageClient;
-```` From WorkerRole.cs.
+```` 
+From WorkerRole.cs.
 
     > **Note:** We are using 2.0 library, which has a different namespace as captured by the Service Bus template.
 1. Build to make sure everything is fine.
