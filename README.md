@@ -10,7 +10,7 @@
 
     We'll add a feature of tracking current hot topics. We'll read mentioned Twitter handles and save statistic data (# of mentions per day) to Windows Azure table storage. Then we'll extend the UI to display the data.
 
-    ![hottopics](../../raw/master/images/hottopics.png?raw=true)
+    ![hottopics](../raw/master/images/hottopics.png?raw=true)
 - **Demonstrate how to extend a Cloud Service to use n-Tiered architecture**
 
     We'll move hot topic analysis to a backend worker role.
