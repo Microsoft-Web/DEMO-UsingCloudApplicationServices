@@ -99,7 +99,7 @@ Tweets getTweets(string name)
         @{Html.RenderAction("HotTopics");}
 </div>
 ````
-    ![partial](images/partial.png?raw=true)
+    ![partial](DEMO-UsingCloudApplicationServices/raw/master/images/partial.png?raw=true)
 1. **F5** to launch the application. Try several different Twitter handles and see screen refreshes.
 
 <a name="n-tier" />
@@ -180,22 +180,22 @@ mClient.Send(new BrokeredMessage(name));
 1. Talk about how easily you can provision a new service.
 1. Cancel the wizard.
 1. Go to an existing NewRelic purchase. Click **MANAGE** link to bring up NewRelic portal.
-    ![manage](images/manage.png?raw=true)
+    ![manage](DEMO-UsingCloudApplicationServices/raw/master/images/manage.png?raw=true)
 
     > **Note:** Mention SSO to the NewRelic portal.  
     > **Note:** See Appendix for details on setting up NewRelic.
 1. In application overview, talk about how we can monitor application server.
 1. Switch to **Browser** view, talk about how we can monitor client perceived performance as well.
 1. Click on **Map** to switch to map view. Show how we can get insights of system topology.
-    ![map](images/map.png?raw=true)
+    ![map](DEMO-UsingCloudApplicationServices/raw/master/images/map.png?raw=true)
 1. Click on **Transactions**, talk about how we can monitor key transactions in the system.  
     ![transaction](images/transaction.png?raw=true)
 1. Click on **Read Twitter Feed** transaction.  
-    ![key](images/key.png?raw=true)
+    ![key](DEMO-UsingCloudApplicationServices/raw/master/images/key.png?raw=true)
 1. Select one of the transaction
-![transaction2](images/transaction2.png?raw=true)
+![transaction2](DEMO-UsingCloudApplicationServices/raw/master/images/transaction2.png?raw=true)
 1.  talk about how we can drill down to call stacks.  
-![details](images/details.png?raw=true)
+![details](DEMO-UsingCloudApplicationServices/raw/master/images/details.png?raw=true)
 <a name="appendix-set-up-newrelic" />
 ## Appendix: Set up NewRelic ##
 1. Log on to Windows Azure Management Portal.
@@ -218,11 +218,11 @@ mClient.Send(new BrokeredMessage(name));
 1. Once the application is deployed, navigate to the application and perform some operations.
 1. In New Relice portal, open Application overview page.
 1. In **Web transactions** section, click on **TwitterFeed.Index**.
-    ![webtransactions](images/webtransactions.png?raw=true)
+    ![webtransactions](DEMO-UsingCloudApplicationServices/raw/master/images/webtransactions.png?raw=true)
 1. Click **Track as Key Transactions**.  
-    ![trackaskey](images/trackaskey.png?raw=true)
+    ![trackaskey](DEMO-UsingCloudApplicationServices/raw/master/images/trackaskey.png?raw=true)
 1. In the wizard window. Enter **Read Twitter Feed** as transaction name, accept all defaults and click on **Track Key Transaction** to complete the wizard.  
-    ![feed](images/feed.png?raw=true)
+    ![feed](DEMO-UsingCloudApplicationServices/raw/master/images/feed.png?raw=true)
 
 
 
