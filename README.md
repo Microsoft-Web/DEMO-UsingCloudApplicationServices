@@ -25,7 +25,7 @@
 ## Demo Preparation ##
 - While the caching and storage part can work on a totally disconnected system, the n-Tier part requires Internet connectivity to access Service Bus.
 - You need to deploy the service beforehand to show scaling and/or NewRelic.
-- If you want to show NewRelic with performance data, you'll need to provision NewRelic beforehand and generate some loads before the demo as it takes a couple of minutes for the static data to show up.
+- If you want to show NewRelic with performance data, you'll need to provision NewRelic beforehand and generate some loads before the demo as it takes a couple of minutes for the static data to show up. See **Appendix** for more details.
 - You should have your Service Bus namespace provisioned with a **ProcessingQueue** queue.
 
 <a name="windows-azure-caching" />
@@ -171,6 +171,60 @@ mClient.Send(new BrokeredMessage(name));
 ````
 1. **F5** to launch the app. 
     > **Note:** You can set break points in worker role such as in **updateHotTopics()** method to show the messages coming through.
+
+<a name="newrelic" />
+## NewRelic ##
+1. Log on to Windows Auzre Management Portal.
+1. Go to **ADD-ONS** tab.
+1. **New**->**Store**->**New Relic**.
+1. Talk about how easily you can provision a new service.
+1. Cancel the wizard.
+1. Go to an existing NewRelic purchase. Click **MANAGE** link to bring up NewRelic portal.
+    ![manage](images/manage.png?raw=true)
+
+    > **Note:** Mention SSO to the NewRelic portal.  
+    > **Note:** See Appendix for details on setting up NewRelic.
+1. In application overview, talk about how we can monitor application server.
+1. Switch to **Browser** view, talk about how we can monitor client perceived performance as well.
+1. Click on **Map** to switch to map view. Show how we can get insights of system topology.
+    ![map](images/map.png?raw=true)
+1. Click on **Transactions**, talk about how we can monitor key transactions in the system.  
+    ![transaction](images/transaction.png?raw=true)
+1. Click on **Read Twitter Feed** transaction.  
+    ![key](images/key.png?raw=true)
+1. Select one of the transaction
+![transaction2](images/transaction2.png?raw=true)
+1.  talk about how we can drill down to call stacks.  
+![details](images/details.png?raw=true)
+<a name="appendix-set-up-newrelic" />
+## Appendix: Set up NewRelic ##
+1. Log on to Windows Azure Management Portal.
+1. Go to **ADD-ONS** tab.
+1. **New**->**Store**->**New Relic**.
+1. Use default **Standard** offer, enter a **NAME**, and then click **Purchase** on next screen to complete the wiazrd.
+1. Open **TwitterReader.Web**.
+1. Add a reference to **New Relic x64 for Windows Auzre** NuGet package.
+1. The NuGet installer will ask for your NewRelic license key as well as an application name. Enter your NEwRelic license key, which you can get from **CONNECTION INFO** dialog from your NewRelic add-on on management portal. Enter **Twitter Reader** as application name.
+1. Change all Service Bus connection strings and storage connection strings to use actual Azure accounts.
+1. Modify **_Layout.cshtml** and add the following two lines around your page body. These api calls generate necessary Javascript snippets for browser-based tracing.
+
+    ````C#
+@Html.Raw(NewRelic.Api.Agent.NewRelic.GetBrowserTimingHeader())
+...
+@Html.Raw(NewRelic.Api.Agent.NewRelic.GetBrowserTimingFooter())
+````
+
+1. Deploy the application.
+1. Once the application is deployed, navigate to the application and perform some operations.
+1. In New Relice portal, open Application overview page.
+1. In **Web transactions** section, click on **TwitterFeed.Index**.
+    ![webtransactions](images/webtransactions.png?raw=true)
+1. Click **Track as Key Transactions**.  
+    ![trackaskey](images/trackaskey.png?raw=true)
+1. In the wizard window. Enter **Read Twitter Feed** as transaction name, accept all defaults and click on **Track Key Transaction** to complete the wizard.  
+    ![feed](images/feed.png?raw=true)
+
+
 
 
 
