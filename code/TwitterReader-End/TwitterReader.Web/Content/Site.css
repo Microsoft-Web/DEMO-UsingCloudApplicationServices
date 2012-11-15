@@ -1,0 +1,252 @@
+﻿html, body, div, span, applet, object, iframe,
+header, section, article, footer,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+    font-family: 'Segoe UI', Verdana, Helvetica, Sans-Serif;
+    color: #323232;
+    font-size: 12px;
+    width:961px;
+    -webkit-box-shadow: 0px 0px 85px rgba(0,0,0,0.3);
+    -o-box-shadow: 0px 0px 85px rgba(0,0,0,0.3); 
+    -moz-box-shadow: 0px 0px 85px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 85px rgba(0,0,0,0.3);
+    margin:0 auto;
+}
+
+header {
+    background:rgb(67, 76, 85);
+    height: 30px;
+}
+
+p.site-title {
+    padding-left: 20px;
+    padding-top:8px;
+}
+
+p.site-title a {
+    background:url(../Images/windowsazurelogo.png) no-repeat;
+    display:block;
+    height:30px;
+    width:140px;
+}
+
+div#body {
+    margin:0 auto;
+    background:#fff;
+}
+
+ul#menu {
+    list-style-type:none;
+    padding-right:20px;
+}
+
+ul#menu li {
+    list-style-type:none;
+    float:left;
+    padding:7px 10px;
+}
+
+ul#menu li a {
+    color:#fff;
+    text-decoration:none;
+}
+
+ul#menu li a:hover {
+    text-decoration:underline;
+}
+
+footer {
+    margin:0 auto;
+    background:#444;
+    height:52px;
+}
+
+.float-left {
+    float:left;
+}
+
+.float-right {
+    float:right;
+}
+
+section.featured {
+    height:260px;
+    background:url(../Images/featured-bg.png) repeat-x;
+    text-align:center;
+}
+
+section.main-content {
+    
+}
+
+span.title {
+    text-transform:uppercase;
+    font-size:60px;
+    font-weight:100;
+    margin:0 auto;
+    display:block;
+    padding-top:100px;
+    color:#fff;
+}
+
+div.twitter-home {
+    width:445px;
+    margin:40px auto 0px auto;
+    background:url(../Images/twitters.png) no-repeat 40% 0;
+    padding-top:61px;
+    text-align:center;
+}
+
+    div.twitter-home input[type="text"] {
+        border: 3px solid #8bc53f;
+        width: 320px;
+        font-size: 36px;
+        font-weight: 100;
+        text-transform: lowercase;
+        padding-left: 50px;
+        background: url(../Images/at.png) no-repeat 2% 50%;
+        font-family: 'Segoe UI', Verdana, Helvetica, Sans-Serif;
+        -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        -o-box-shadow: 0px 0px 10px rgba(0,0,0,0.3); 
+        -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    }
+
+    div.twitter-home p {
+        font-size:22px;
+        padding-top:60px;
+        padding-bottom:120px;
+        font-weight:100;
+        color:#4e4e4e;
+    }
+
+    div.twitter-home img {
+        cursor:pointer;
+        width:43px;
+        width:43px;
+        margin-bottom:-5px;
+        margin-left:18px;
+    }
+
+div.feed-header {
+    height:40px;
+    font-size:18px;
+    padding:5px 20px;
+    margin-top:20px;
+}
+
+div.feed-header input[type="text"] {
+        border: 2px solid #8bc53f;
+        width: 180px;
+        font-size: 20px;
+        font-weight: 100;
+        text-transform: lowercase;
+        padding-left: 30px;
+        background: url(../Images/at-small.png) no-repeat 2% 50%;
+        font-family: 'Segoe UI', Verdana, Helvetica, Sans-Serif;
+        -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        -o-box-shadow: 0px 0px 10px rgba(0,0,0,0.3); 
+        -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    }
+
+span.screen_name {
+    font-weight:bold;
+    margin-right:20px;
+}
+
+.entry_table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width:100%;
+}
+.entry_time_cell {
+    color:#999;
+    text-align:right;
+}
+
+.entry_holder {
+    background-color:#fff;
+    max-height:600px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.entry {
+    border-bottom-color:#e2e2e2;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    margin:0px;
+    width:100%;
+}
+.entry_image_cell {
+    text-align:center;
+    vertical-align:top;
+    width:64px;
+}
+.entry_image {
+    margin-left:8px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-top:8px;
+    width:48px;
+    height:48px;
+}
+.screen_name {
+    font-weight:bold;
+}
+.user_name {
+    color:#999;
+    margin-left:5px;
+}
+.entry_text {
+    vertical-align:top;
+}
+td {
+    padding:1px 20px 5px 5px;
+    border: 0 none;
+}
+tr {
+    margin:0; padding:0;
+}
+table {
+    font-size:1.2em;
+    vertical-align:middle;
+        
+}
+td.text_cell {
+    vertical-align:bottom;
+    padding-top:2px;
+}
+
+.loadtime {
+    padding-top:5px;
+}
+.hot_zone {
+    background-color: #808080;
+    padding:8px;
+}
+.hot_topic {
+    color:white;
+    margin: 3px;
+}
+.hot_mention {
+    margin: 3px;
+    color: #C0C0C0;
+    font-size: small;
+}

@@ -1,0 +1,8 @@
+﻿@model List<TweeterReader.Web.Entities.TopicModel>
+<div class="hot_zone">
+    @foreach (var item in Model)
+    {
+            <span class="hot_topic">@item.Topic</span>
+            <span class="hot_mention">(@item.Mentions)</span>
+    }
+</div>

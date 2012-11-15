@@ -1,0 +1,22 @@
+﻿@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <span class="title">my twitter reader</span>
+        </div>
+    </section>
+}
+
+<div class="twitter-home">
+    <div>
+        <input type="text" value="WindowsAzure" id="txtHomeScreenName" class="largeInput" />
+        <img src="~/Images/arrow.png" id="imgHomeScreenName" />
+    </div>
+    <p>
+        Type in the Twitter handle of people or organization you care about and start reading.
+    </p>
+</div>
+
+<script>
+    txtHomeScreenName.focus();
+    txtHomeScreenName.setSelectionRange(txtHomeScreenName.value.length, txtHomeScreenName.value.length);
+</script>

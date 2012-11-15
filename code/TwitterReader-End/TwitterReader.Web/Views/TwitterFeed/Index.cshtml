@@ -1,0 +1,37 @@
+﻿@model TweetReader.Web.Repositories.Tweets
+@{
+    ViewBag.Title = "Recent tweets from " + @Model.screen_name;
+    ViewBag.ScreenName = @Model.screen_name;
+}
+
+<div class="feed-header">
+    <div class="float-left loadtime"><b>Load Time: @ViewBag.LoadTime.ToString("0.##")</b> (ms)</div>
+    <div class="float-right">Displaying latest tweets from <input type="text" value="@Model.screen_name" id="txtScreenName"></div>
+    <div style="clear:both;"></div>
+</div>
+
+
+<div class="entry_holder">
+@foreach (var item in Model.Items)
+{
+    <div class="entry">
+        <table class="entry_table">
+            <tr>
+                <td rowspan="2" class="entry_image_cell"><img class="entry_image" src="@Model.profile_image_url" alt="../../Images/Azure-300x300px_normal.png"/></td>
+                <td class="text_cell"><span class="screen_name">@Model.name</span><span class="user_name">@@@Model.screen_name</span></td>
+                <td class="entry_time_cell">@item.created_at_display</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="entry_text">@item.text</td>
+            </tr>
+        </table>
+    </div>    
+}
+</div>
+<div>
+    @{Html.RenderAction("HotTopics");}
+</div>
+<script>
+    txtScreenName.focus();
+    txtScreenName.setSelectionRange(txtScreenName.value.length, txtScreenName.value.length);
+</script>

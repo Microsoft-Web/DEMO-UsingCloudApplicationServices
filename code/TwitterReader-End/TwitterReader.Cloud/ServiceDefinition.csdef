@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="TweeterReader.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2012-10.1.8">
+  <WebRole name="TwitterReader.Web" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="Diagnostics" />
+      <Import moduleName="Caching" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="localStore" cleanOnRoleRecycle="false" sizeInMB="1000" />
+      <LocalStorage name="DiagnosticStore" sizeInMB="20000" cleanOnRoleRecycle="false" />
+    </LocalResources>
+    <Startup priority="-2">
+      <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
+    </Startup>
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" />
+      <Setting name="StorageConnectionString" />
+    </ConfigurationSettings>
+  </WebRole>
+  <WorkerRole name="TwitterReader.Worker" vmsize="Small">
+    <Imports>
+      <Import moduleName="Diagnostics" />
+    </Imports>
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBus.ConnectionString" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" />
+      <Setting name="StorageConnectionString" />
+    </ConfigurationSettings>
+    <Startup priority="-2">
+      <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
+    </Startup>
+  </WorkerRole>
+</ServiceDefinition>
